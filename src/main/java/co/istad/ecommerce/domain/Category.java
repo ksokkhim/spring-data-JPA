@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.net.http.HttpClient;
 import java.util.List;
 
 @Entity
@@ -20,7 +21,9 @@ public class Category {
     @Column(nullable = false , unique = true, length = 50)
     private String name;
 
-    private String descrition;
+    private Boolean isDeleted;
+
+    private String description;
     private String icon;
 
     @ManyToOne
@@ -29,5 +32,6 @@ public class Category {
 
     @OneToMany(mappedBy = "category")
     private List<Product> products;
+
 
 }

@@ -1,7 +1,7 @@
 spring:
   jpa:
     hibernate:
-      ddl_auto: create-drop
+      ddl_auto: update
     show-sql: true
 
   datasource:
