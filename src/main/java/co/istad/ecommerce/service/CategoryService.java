@@ -11,7 +11,7 @@ import java.util.List;
 public interface CategoryService {
     CategoryResponse createNew(CreateCategoryRequest createCategoryRequest);
 
-    public Page<CategoryResponse> getAllCategory(int pageNumber, int pageSize);
+    Page<CategoryResponse> getAllCategory(int pageNumber, int pageSize);
 
     CategoryResponse getCategoryById(Integer id);
 

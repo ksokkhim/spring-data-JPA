@@ -108,8 +108,8 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public List<CategoryResponse> getSubcategories(Integer id) {
-        List<Category> subcategories = categoryRepository.getCategoriesByParentCategoryId(id);
-        return subcategories.stream().map(categoryMapper::mapCategoryToCategoryRes).toList();
+        List<Category> subcategories = categoryRepository.getCategoryByParentCategoryId(id);
+        return subcategories.stream().map(categoryMapper::mapCategoryToCategoryResponse).toList();
     }
 
     @Override
