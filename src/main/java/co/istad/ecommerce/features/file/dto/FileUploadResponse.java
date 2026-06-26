@@ -8,6 +8,9 @@ public record FileUploadResponse(
         String caption,
         Long size,
         String mediaType,
+        String extension,
+
+
 //        http://localhost:9090/file/dog-working.jpg
         String uri
 ) {
