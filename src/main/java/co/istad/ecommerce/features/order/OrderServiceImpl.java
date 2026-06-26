@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -23,9 +24,9 @@ import java.util.UUID;
 public class OrderServiceImpl implements OrderService {
 
     private final OrderMapper orderMapper;
-    private OrderRepository orderRepository;
-    private CreateOrderRequest createOrderRequest;
-    private ProductRepository productRepository;
+    private final OrderRepository orderRepository;
+    private final  ProductRepository productRepository;
+
 
 
     @Override
@@ -35,6 +36,7 @@ public class OrderServiceImpl implements OrderService {
         order.setCustomerId("koko");
         order.setDiscount(createOrderRequest.discount());
         order.setRemark(createOrderRequest.remark());
+        order.setOrderCreate(LocalDateTime.now());
         order.setIsDelete(false);
         order.setStatus(false);
 

@@ -31,6 +31,9 @@ public class Order {
     private String remark;
 
     @Column(nullable = false)
+    private LocalDateTime orderCreate;
+
+    @Column(nullable = false)
     private Boolean status;
 
     @Column(nullable = false)
